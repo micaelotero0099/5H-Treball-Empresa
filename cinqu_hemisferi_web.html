@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ca" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinquè Hemisferi | Centre d'Estimulació Cognitiva</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            DEFAULT: '#F9F6F0',
+                            dark: '#EBE6DC'
+                        },
+                        brown: {
+                            DEFAULT: '#3E2723',
+                            dark: '#2A1A17'
+                        },
+                        amber: {
+                            DEFAULT: '#D49A5B',
+                            dark: '#B87D42'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for Navbar and Carousel */
+        .glass-nav {
+            background: rgba(249, 246, 240, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        .carousel-slide {
+            transition: opacity 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-cream text-brown font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-amber/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="text-3xl font-serif font-bold text-amber">5H</span>
+                    <span class="text-xl font-serif font-semibold text-brown tracking-wide hidden sm:block">Cinquè Hemisferi</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#serveis" class="text-brown/80 hover:text-amber transition-colors font-medium">Serveis</a>
+                    <a href="#equip" class="text-brown/80 hover:text-amber transition-colors font-medium">L'Equip</a>
+                    <a href="#tallers" class="text-brown/80 hover:text-amber transition-colors font-medium">Tallers</a>
+                    <a href="#contacte" class="bg-brown text-cream px-5 py-2 rounded-full hover:bg-amber hover:text-brown transition-all duration-300 font-medium shadow-md">Contacte</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brown hover:text-amber focus:outline-none">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-amber/20">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
+                <a href="#serveis" class="block px-3 py-2 text-brown hover:text-amber font-medium">Serveis</a>
+                <a href="#equip" class="block px-3 py-2 text-brown hover:text-amber font-medium">L'Equip</a>
+                <a href="#tallers" class="block px-3 py-2 text-brown hover:text-amber font-medium">Tallers</a>
+                <a href="#contacte" class="block px-3 py-2 text-amber font-bold">Contacte</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-brown-dark">
+        <!-- Carousel Backgrounds -->
+        <div id="hero-carousel" class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=2000&auto=format&fit=crop" alt="Teràpia amb pacients" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-100">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953eb1f5bc?q=80&w=2000&auto=format&fit=crop" alt="Estimulació cognitiva grupal" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+            <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?q=80&w=2000&auto=format&fit=crop" alt="Exercicis neuropsicològics" class="carousel-slide absolute inset-0 w-full h-full object-cover opacity-0">
+            <!-- Dark overlay for text readability -->
+            <div class="absolute inset-0 bg-brown/70 mix-blend-multiply"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <h1 class="text-4xl md:text-6xl font-serif text-cream mb-6 leading-tight">
+                Preservar el potencial, <br/> <span class="text-amber">potenciar l'autonomia.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-cream/90 mb-10 font-light max-w-2xl mx-auto drop-shadow-md">
+                Centre clínic especialitzat en avaluació neuropsicològica, estimulació cognitiva integrada i suport integral a famílies a El Prat de Llobregat.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contacte" class="bg-amber text-brown px-8 py-3 rounded-full text-lg font-semibold hover:bg-cream transition-all shadow-lg hover:-translate-y-1">Demana Valoració Inicial</a>
+                <a href="#serveis" class="bg-transparent border border-cream text-cream px-8 py-3 rounded-full text-lg font-medium hover:bg-cream/10 transition-all">Descobreix els Serveis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serveis Section (Detailed List) -->
+    <section id="serveis" class="py-24 bg-cream">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brown mb-4">Els Nostres Serveis</h2>
+                <div class="w-20 h-1 bg-amber mx-auto mb-6"></div>
+                <p class="text-brown/80 max-w-2xl mx-auto text-lg">Programes terapèutics especialitzats dissenyats per a l'avaluació, el manteniment i la rehabilitació de les funcions cognitives.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Servei 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-amber/10 flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-amber/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="ph ph-stethoscope text-2xl text-amber"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-brown">Avaluació Neuropsicològica</h3>
+                    </div>
+                    <p class="text-brown/70 mb-6 flex-grow">Procés complet que inclou anamnesi clínica, administració de proves estandarditzades, correcció i lliurament d'informe clínic detallat per determinar l'estat cognitiu.</p>
+                    <a href="#contacte" class="text-amber font-semibold hover:text-brown transition-colors inline-flex items-center gap-1">Consulta'ns <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Servei 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-amber/10 flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-amber/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="ph ph-user text-2xl text-amber"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-brown">Estimulació Cognitiva Individual</h3>
+                    </div>
+                    <p class="text-brown/70 mb-6 flex-grow">Sessions clíniques privades i totalment personalitzades (60 minuts), adaptades a les capacitats i necessitats específiques de cada pacient per maximitzar el rendiment.</p>
+                    <a href="#contacte" class="text-amber font-semibold hover:text-brown transition-colors inline-flex items-center gap-1">Consulta'ns <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Servei 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-amber/10 flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-amber/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="ph ph-users text-2xl text-amber"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-brown">Estimulació Cognitiva Grupal</h3>
+                    </div>
+                    <p class="text-brown/70 mb-6 flex-grow">Sessions setmanals de 90 minuts en grups reduïts i homogenis. Fomentem la interacció social i l'entrenament conjunt de la memòria i les funcions executives.</p>
+                    <a href="#contacte" class="text-amber font-semibold hover:text-brown transition-colors inline-flex items-center gap-1">Consulta'ns <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <!-- Servei 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-amber/10 flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-amber/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="ph ph-heart text-2xl text-amber"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-brown">Orientació i Suport Familiar</h3>
+                    </div>
+                    <p class="text-brown/70 mb-6 flex-grow">Sessions d'assessorament directe a cuidadors i familiars. Oferim pautes d'intervenció, psicoeducació i estratègies per gestionar el dia a dia a la llar amb serenitat.</p>
+                    <a href="#contacte" class="text-amber font-semibold hover:text-brown transition-colors inline-flex items-center gap-1">Consulta'ns <i class="ph ph-arrow-right"></i></a>
+                </div>
+                
+                <!-- Servei 5 (Centred full width or standard slot depending on grid) -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-amber/10 flex flex-col h-full md:col-span-2 md:w-1/2 md:mx-auto">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-amber/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="ph ph-desktop text-2xl text-amber"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-brown">Suport Digital (NeuronUP)</h3>
+                    </div>
+                    <p class="text-brown/70 mb-6 flex-grow">Plataforma d'estimulació online que permet la programació personalitzada d'exercicis per realitzar a casa, amb monitoratge remot i seguiment per part de l'equip clínic.</p>
+                    <a href="#contacte" class="text-amber font-semibold hover:text-brown transition-colors inline-flex items-center gap-1">Consulta'ns <i class="ph ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- L'Equip Section -->
+    <section id="equip" class="py-24 bg-cream-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brown mb-4">El Nostre Equip</h2>
+                <div class="w-20 h-1 bg-amber mx-auto mb-6"></div>
+                <p class="text-brown/70 max-w-2xl mx-auto text-lg">Professionals col·legiats i apassionats per la neuropsicologia, oferint un tracte proper i rigor científic.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+                <!-- Membre 1 (Eric) -->
+                <div class="text-center group bg-cream rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative w-40 h-40 mx-auto mb-6 overflow-hidden rounded-full border-4 border-amber/20 group-hover:border-amber transition-colors">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=400&auto=format&fit=crop" alt="Eric Abad" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-brown mb-1">Eric Abad</h3>
+                    <p class="text-amber font-medium text-sm mb-4">Psicòleg i Neuropsicòleg</p>
+                    <p class="text-brown/70 text-sm leading-relaxed">Soci fundador. Especialista en avaluació cognitiva, rehabilitació i acompanyament terapèutic a famílies en processos de deteriorament.</p>
+                </div>
+
+                <!-- Membre 2 -->
+                <div class="text-center group bg-cream rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative w-40 h-40 mx-auto mb-6 overflow-hidden rounded-full border-4 border-amber/20 group-hover:border-amber transition-colors">
+                        <img src="https://images.unsplash.com/photo-1594824436998-dd40e4f3a45f?q=80&w=400&auto=format&fit=crop" alt="Psicòloga" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-brown mb-1">Nom Cognom</h3>
+                    <p class="text-amber font-medium text-sm mb-4">Psicòloga i Terapeuta</p>
+                    <p class="text-brown/70 text-sm leading-relaxed">Socia fundadora. Especialitzada en intervenció terapèutica d'adults grans, psicoeducació i dinamització de grups de suport emocional.</p>
+                </div>
+
+                <!-- Membre 3 -->
+                <div class="text-center group bg-cream rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="relative w-40 h-40 mx-auto mb-6 overflow-hidden rounded-full border-4 border-amber/20 group-hover:border-amber transition-colors">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=400&auto=format&fit=crop" alt="Neuropsicòleg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-brown mb-1">Nom Cognom</h3>
+                    <p class="text-amber font-medium text-sm mb-4">Neuropsicòleg</p>
+                    <p class="text-brown/70 text-sm leading-relaxed">Soci fundador. Expert en planificació de programes d'estimulació cognitiva mitjançant l'ús de noves tecnologies i plataformes digitals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tallers / Comunitat Section -->
+    <section id="tallers" class="py-24 bg-brown text-cream relative overflow-hidden">
+        <i class="ph ph-brain absolute -right-20 -bottom-20 text-[300px] text-amber/5 opacity-20"></i>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-amber mb-4">Tallers Comunitaris a El Prat</h2>
+                    <p class="text-cream/80 text-lg mb-8 leading-relaxed">
+                        A Cinquè Hemisferi creiem fermament en la prevenció i la proximitat. Organitzem cicles trimestrals gratuïts als centres cívics i biblioteques del nostre municipi per apropar la salut cerebral a totes les famílies.
+                    </p>
+                    
+                    <!-- Featured Event Card -->
+                    <div class="bg-cream/10 border border-amber/30 rounded-2xl p-6 backdrop-blur-sm shadow-lg">
+                        <div class="inline-block bg-amber text-brown text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Xerrada Destacada</div>
+                        <h3 class="text-2xl font-serif font-bold text-cream mb-2">«El Semàfor de la Memòria»</h3>
+                        <p class="text-cream/70 text-sm mb-4">Com diferenciar els descuits quotidians inofensius dels senyals d'alerta clínica real. Sessió teoricopràctica per a adults, fills i cuidadors on s'entrega material de suport.</p>
+                        
+                        <div class="flex flex-wrap items-center gap-4 text-sm text-amber mb-6 font-medium">
+                            <div class="flex items-center gap-1"><i class="ph ph-calendar-blank text-lg"></i> Inscripció Oberta</div>
+                            <div class="flex items-center gap-1"><i class="ph ph-map-pin text-lg"></i> Cèntric Espai Cultural</div>
+                        </div>
+                        
+                        <a href="#contacte" class="inline-block bg-amber text-brown hover:bg-cream px-6 py-2 rounded-full transition-colors font-semibold shadow-md">Informa't sobre dates</a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=800&auto=format&fit=crop" alt="Taller participatiu al centre cívic" class="rounded-2xl shadow-lg h-56 w-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953eb1f5bc?q=80&w=800&auto=format&fit=crop" alt="Grup persones grans escoltant" class="rounded-2xl shadow-lg h-56 w-full object-cover mt-8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacte Section -->
+    <section id="contacte" class="py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl border border-amber/10 overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    
+                    <!-- Informació de contacte -->
+                    <div class="bg-brown p-10 md:p-14 text-cream flex flex-col justify-between relative">
+                        <!-- Watermark logo -->
+                        <div class="absolute top-10 right-10 opacity-5 pointer-events-none">
+                            <span class="text-8xl font-serif font-bold">5H</span>
+                        </div>
+
+                        <div class="relative z-10">
+                            <h2 class="text-3xl font-serif font-bold text-amber mb-6">Contacta'ns</h2>
+                            <p class="text-cream/80 mb-10 leading-relaxed max-w-md">
+                                Sol·licita una primera cita o posa't en contacte amb nosaltres per consultar els nostres serveis. Estem aquí per escoltar-te i acompanyar-te.
+                            </p>
+
+                            <div class="space-y-8">
+                                <div class="flex items-center gap-5 group cursor-pointer" onclick="window.open('https://maps.google.com/?q=Carrer+de+Lleida,+67,+El+Prat+de+Llobregat')">
+                                    <div class="w-12 h-12 rounded-full bg-amber/20 group-hover:bg-amber transition-colors flex items-center justify-center flex-shrink-0">
+                                        <i class="ph ph-map-pin text-2xl text-amber group-hover:text-brown transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-cream text-lg">Carrer de Lleida, 67</p>
+                                        <p class="text-sm text-cream/70">08820 El Prat de Llobregat</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-5 group cursor-pointer" onclick="window.location.href='tel:+34937123456'">
+                                    <div class="w-12 h-12 rounded-full bg-amber/20 group-hover:bg-amber transition-colors flex items-center justify-center flex-shrink-0">
+                                        <i class="ph ph-phone text-2xl text-amber group-hover:text-brown transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-cream text-lg">+34 937 12 34 56</p>
+                                        <p class="text-sm text-cream/70">Dilluns a Divendres</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center gap-5 group cursor-pointer" onclick="window.location.href='mailto:hola@cinquehemisferi.cat'">
+                                    <div class="w-12 h-12 rounded-full bg-amber/20 group-hover:bg-amber transition-colors flex items-center justify-center flex-shrink-0">
+                                        <i class="ph ph-envelope-simple text-2xl text-amber group-hover:text-brown transition-colors"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-cream text-lg">hola@cinquehemisferi.cat</p>
+                                        <p class="text-sm text-cream/70">Respondrem aviat</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-16 pt-8 border-t border-amber/20 relative z-10 flex justify-between items-end">
+                            <div>
+                                <p class="text-sm text-cream/60 mb-3">Xarxes socials</p>
+                                <div class="flex gap-4">
+                                    <a href="#" class="w-10 h-10 rounded-full border border-cream/30 flex items-center justify-center text-cream hover:bg-amber hover:text-brown hover:border-amber transition-all"><i class="ph ph-instagram-logo text-xl"></i></a>
+                                    <a href="#" class="w-10 h-10 rounded-full border border-cream/30 flex items-center justify-center text-cream hover:bg-amber hover:text-brown hover:border-amber transition-all"><i class="ph ph-linkedin-logo text-xl"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulari -->
+                    <div class="p-10 md:p-14 bg-white">
+                        <h3 class="text-2xl font-serif font-bold text-brown mb-2">Envia'ns un missatge</h3>
+                        <p class="text-brown/60 mb-8 text-sm">Omple el formulari i ens posarem en contacte amb tu ràpidament.</p>
+                        
+                        <form onsubmit="event.preventDefault(); showMessage();" class="space-y-5">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="nom" class="block text-sm font-semibold text-brown mb-1">Nom i Cognoms</label>
+                                    <input type="text" id="nom" class="w-full px-4 py-3 bg-cream-dark/30 border border-brown/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent transition-all" placeholder="El teu nom" required>
+                                </div>
+                                <div>
+                                    <label for="telefon" class="block text-sm font-semibold text-brown mb-1">Telèfon de contacte</label>
+                                    <input type="tel" id="telefon" class="w-full px-4 py-3 bg-cream-dark/30 border border-brown/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent transition-all" placeholder="Ex. 600 000 000" required>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="motiu" class="block text-sm font-semibold text-brown mb-1">Motiu de la consulta</label>
+                                <select id="motiu" class="w-full px-4 py-3 bg-cream-dark/30 border border-brown/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent transition-all text-brown">
+                                    <option>Informació general</option>
+                                    <option>Demanar Cita Prèvia (Avaluació)</option>
+                                    <option>Informació sobre Grups o Tallers</option>
+                                    <option>Altres</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="missatge" class="block text-sm font-semibold text-brown mb-1">El teu missatge</label>
+                                <textarea id="missatge" rows="4" class="w-full px-4 py-3 bg-cream-dark/30 border border-brown/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber focus:border-transparent transition-all resize-none" placeholder="Com et podem ajudar?"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brown text-cream font-bold py-4 rounded-xl hover:bg-amber hover:text-brown transition-colors duration-300 shadow-md flex justify-center items-center gap-2">
+                                Enviar Petició <i class="ph ph-paper-plane-right"></i>
+                            </button>
+                            
+                            <div id="form-msg" class="hidden mt-4 p-4 bg-green-50 text-green-700 rounded-xl text-sm font-medium border border-green-200 text-center">
+                                Gràcies. Hem rebut el teu missatge correctament i et contactarem ben aviat.
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brown-dark text-cream py-8 border-t border-amber/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2 opacity-80">
+                <span class="font-serif font-bold text-amber text-xl">5H</span>
+                <span class="text-sm">© 2024 Cinquè Hemisferi. Tots els drets reservats.</span>
+            </div>
+            <div class="flex gap-6 text-sm opacity-60">
+                <a href="#" class="hover:text-amber transition-colors">Avís Legal</a>
+                <a href="#" class="hover:text-amber transition-colors">Política de Privacitat</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Hero Carousel Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.carousel-slide');
+            let currentSlide = 0;
+            
+            if(slides.length > 1) {
+                setInterval(() => {
+                    // Hide current
+                    slides[currentSlide].classList.remove('opacity-100');
+                    slides[currentSlide].classList.add('opacity-0');
+                    
+                    // Increment
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    
+                    // Show next
+                    slides[currentSlide].classList.remove('opacity-0');
+                    slides[currentSlide].classList.add('opacity-100');
+                }, 4500); // Change image every 4.5 seconds
+            }
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Simple Form Submission visual feedback
+        function showMessage() {
+            const msg = document.getElementById('form-msg');
+            msg.classList.remove('hidden');
+            setTimeout(() => {
+                msg.classList.add('hidden');
+            }, 6000);
+            
+            // Optional: reset form
+            document.querySelector('form').reset();
+        }
+    </script>
+</body>
+</html>
