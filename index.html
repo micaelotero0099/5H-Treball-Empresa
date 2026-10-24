@@ -104,7 +104,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Gemini_Generated_Image_ry5wbury5wbury5w.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Gemini_Generated_Image_ry5wbury5wbury5w_2.jpg') center/cover no-repeat;
             z-index: -1;
         }
 
@@ -193,9 +193,40 @@
             margin-bottom: 20px;
         }
 
+        /* Instal·lacions Section */
+        .instalacions {
+            padding: 40px 5% 80px;
+            background-color: var(--white);
+        }
+
+        .instalacions-grid {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .instalacio-img {
+            flex: 1;
+            min-width: 300px;
+            max-width: 550px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .instalacio-img:hover {
+            transform: scale(1.02);
+        }
+
         /* Serveis Section */
         .services {
             padding: 80px 5%;
+            background-color: #EFEBE0;
         }
 
         .section-title {
@@ -206,7 +237,6 @@
             margin-bottom: 60px;
         }
 
-        /* Flexbox per centrar perfectament 3 a dalt i 2 a baix */
         .services-grid {
             display: flex;
             flex-wrap: wrap;
@@ -223,15 +253,21 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             text-align: center;
             transition: transform 0.3s ease;
-            width: calc(33.333% - 20px);
-            min-width: 320px;
+            width: 31%;
+            min-width: 300px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            align-items: center;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
+        }
+
+        .icon-elegant {
+            color: var(--accent-gold);
+            margin-bottom: 20px;
         }
 
         .service-card h3 {
@@ -255,13 +291,12 @@
             font-size: 0.9rem;
             border-bottom: 1px solid var(--accent-gold);
             padding-bottom: 2px;
-            align-self: center;
         }
 
         /* Team Section */
         .team {
             padding: 80px 5%;
-            background-color: #EFEBE0;
+            background-color: var(--white);
         }
 
         .team-grid {
@@ -273,7 +308,7 @@
         }
 
         .team-member {
-            background: var(--white);
+            background: var(--primary-bg);
             padding: 40px 30px;
             border-radius: 20px;
             text-align: center;
@@ -286,7 +321,7 @@
             margin: 0 auto 25px;
             border-radius: 50%;
             overflow: hidden;
-            border: 4px solid var(--primary-bg);
+            border: 4px solid var(--white);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
@@ -295,6 +330,14 @@
             height: 100%;
             object-fit: cover;
         }
+
+        /* Ajustaments de les fotos per les cares */
+        .img-maria { object-position: center 25%; }
+        .img-marisa { object-position: center 15%; }
+        .img-eric { object-position: center 15%; }
+        .img-antonio { object-position: center; }
+        .img-micael { object-position: center 5%; }
+        .img-mariona { object-position: center 8%; }
 
         .team-member h3 {
             font-family: 'Georgia', serif;
@@ -323,19 +366,20 @@
         /* Tallers Section */
         .tallers {
             padding: 80px 5%;
-            background-color: var(--white);
+            background-color: #EFEBE0;
         }
         
         .taller-container {
             max-width: 900px;
             margin: 0 auto;
-            background: var(--primary-bg);
+            background: var(--white);
             border-radius: 20px;
             padding: 50px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
 
         .taller-tag {
@@ -363,7 +407,7 @@
         }
 
         .taller-details {
-            background: var(--white);
+            background: var(--primary-bg);
             padding: 20px 40px;
             border-radius: 10px;
             display: inline-block;
@@ -379,57 +423,42 @@
             color: var(--accent-dark);
         }
 
-        /* Contact Section Dedicada */
-        .contacte-seccio {
-            padding: 80px 5%;
-            background-color: #EFEBE0;
-            text-align: center;
-        }
-
-        .contacte-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .contacte-container h2 {
-            font-size: 2.5rem;
-            font-family: 'Georgia', serif;
-            color: var(--accent-dark);
-            margin-bottom: 20px;
-        }
-
-        .contacte-container p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        .contacte-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            font-size: 1.1rem;
-            color: var(--text-dark);
-        }
-
-        .contacte-info strong {
-            color: var(--accent-gold);
-        }
-
-        /* Footer */
+        /* Footer / Contact */
         footer {
             background-color: var(--accent-dark);
             color: var(--white);
-            padding: 40px 5% 20px;
-            text-align: center;
+            padding: 60px 5% 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Georgia', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+            color: #ddd;
         }
 
         .footer-bottom {
-            margin-top: 20px;
+            text-align: center;
+            margin-top: 50px;
             padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
             color: #aaa;
@@ -438,11 +467,10 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            nav { display: none; }
+            nav { display: none; } 
             .hero-buttons { flex-direction: column; }
-            .service-card { width: 100%; }
             .taller-container { padding: 30px 20px; }
-            .contacte-container { padding: 30px 20px; }
+            .service-card { width: 100%; }
         }
     </style>
 </head>
@@ -479,35 +507,70 @@
         </div>
     </section>
 
+    <!-- Secció Instal·lacions -->
+    <section class="instalacions">
+        <div class="instalacions-grid">
+            <img src="Screenshot%202026-10-23%20130804.jpg" alt="Recepció del centre" class="instalacio-img">
+            <img src="Gemini_Generated_Image_ry5wbury5wbury5w_2.jpg" alt="Façana del centre" class="instalacio-img">
+        </div>
+    </section>
+
     <section id="serveis" class="services">
         <h2 class="section-title">Els Nostres Serveis Clínics</h2>
         <div class="services-grid">
             
             <div class="service-card">
+                <!-- Icona SVG Avaluació -->
+                <svg class="icon-elegant" viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
+                    <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
+                </svg>
                 <h3>Avaluació Neuropsicològica</h3>
                 <p>Procés complet que inclou l'anamnesi, la passació de proves estandarditzades, la correcció i l'entrega d'un informe clínic detallat sobre l'estat cognitiu.</p>
                 <a href="#contacte" class="service-action">Consultar disponibilitat</a>
             </div>
 
             <div class="service-card">
+                <!-- Icona SVG Individual -->
+                <svg class="icon-elegant" viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
                 <h3>Estimulació Cognitiva Individual</h3>
                 <p>Sessions individuals de 60 minuts totalment adaptades a les necessitats i capacitats de l'usuari, orientades a mantenir i rehabilitar les funcions cognitives.</p>
                 <a href="#contacte" class="service-action">Consultar disponibilitat</a>
             </div>
 
             <div class="service-card">
+                <!-- Icona SVG Grupal -->
+                <svg class="icon-elegant" viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
                 <h3>Estimulació Cognitiva Grupal</h3>
                 <p>Sessions setmanals de 90 minuts en grups reduïts. Fomenta el treball de la memòria i l'atenció afavorint al mateix temps la socialització terapèutica.</p>
                 <a href="#contacte" class="service-action">Consultar disponibilitat</a>
             </div>
 
             <div class="service-card">
+                <!-- Icona SVG Família -->
+                <svg class="icon-elegant" viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
                 <h3>Orientació i Suport Familiar</h3>
                 <p>Sessions de 60 minuts d'assessorament adreçades a cuidadors i familiars. Pautes de maneig conductual, psicoeducació i suport emocional per a l'entorn.</p>
                 <a href="#contacte" class="service-action">Consultar disponibilitat</a>
             </div>
 
             <div class="service-card">
+                <!-- Icona SVG Digital -->
+                <svg class="icon-elegant" viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
                 <h3>Suport Digital (NeuronUP)</h3>
                 <p>Plataforma d'entrenament cognitiu des de casa. Inclou la programació d'exercicis personalitzats i la monitorització remota per part dels nostres professionals.</p>
                 <a href="#contacte" class="service-action">Consultar disponibilitat</a>
@@ -522,7 +585,7 @@
             
             <div class="team-member">
                 <div class="team-img-container">
-                    <img src="WhatsApp%20Image%202026-10-21%20at%2013.18.38.jpeg" alt="Maria Bieg Salazar" class="team-img" style="object-position: center 10%;">
+                    <img src="maria.jpg" alt="Maria Bieg Salazar" class="team-img img-maria">
                 </div>
                 <h3>Maria Bieg Salazar</h3>
                 <span class="team-role">Psicòloga General Sanitària · Clínica, Esport i Emergències</span>
@@ -531,7 +594,7 @@
 
             <div class="team-member">
                 <div class="team-img-container">
-                    <img src="WhatsApp%20Image%202026-10-21%20at%2013.09.46.jpeg" alt="Marisa Béjar" class="team-img" style="object-position: center 10%;">
+                    <img src="marisa.jpg" alt="Marisa Béjar" class="team-img img-marisa">
                 </div>
                 <h3>Marisa Béjar</h3>
                 <span class="team-role">Psicòloga General Sanitària · Teràpia Sistèmica i Famílies</span>
@@ -540,7 +603,7 @@
 
             <div class="team-member">
                 <div class="team-img-container">
-                    <img src="WhatsApp%20Image%202026-10-21%20at%2015.24.51.jpeg" alt="Eric Abad" class="team-img" style="object-position: center 15%;">
+                    <img src="eric.jpg" alt="Eric Abad" class="team-img img-eric">
                 </div>
                 <h3>Eric Abad</h3>
                 <span class="team-role">Psicologia i Neuropsicologia · Avaluació, Demències i Rehabilitació</span>
@@ -549,7 +612,7 @@
 
             <div class="team-member">
                 <div class="team-img-container">
-                    <img src="WhatsApp%20Image%202026-10-21%20at%2012.53.26.jpeg" alt="Antonio Sánchez Gutiérrez" class="team-img" style="object-position: center;">
+                    <img src="antonio.jpg" alt="Antonio Sánchez Gutiérrez" class="team-img img-antonio">
                 </div>
                 <h3>Antonio Sánchez Gutiérrez</h3>
                 <span class="team-role">Neuropsicologia, Emprenedoria i Cura Integral</span>
@@ -558,7 +621,7 @@
 
             <div class="team-member">
                 <div class="team-img-container">
-                    <img src="Screenshot%202026-10-23%20122842.png" alt="Micael Otero" class="team-img" style="object-position: center 0%;">
+                    <img src="micael.jpg" alt="Micael Otero" class="team-img img-micael">
                 </div>
                 <h3>Micael Otero</h3>
                 <span class="team-role">Neuropsicòleg · Avaluació Digital i Precision Psychiatry</span>
@@ -567,7 +630,7 @@
 
             <div class="team-member">
                 <div class="team-img-container">
-                    <img src="WhatsApp%20Image%202026-10-21%20at%2016.23.32.jpeg" alt="Mariona Gallostra" class="team-img" style="object-position: center 5%;">
+                    <img src="mariona.jpg" alt="Mariona Gallostra" class="team-img img-mariona">
                 </div>
                 <h3>Mariona Gallostra</h3>
                 <span class="team-role">Psicòloga General Sanitària · Especialitzada en Neuropsicologia</span>
@@ -584,30 +647,37 @@
             <p class="taller-desc">Xerrada-taller participativa orientada a famílies, cuidadors i persones preocupades pel seu rendiment cognitiu. Aprendrem a diferenciar els descuits associats a l'estrès o l'edat dels senyals que requereixen una valoració clínica, i oferirem pautes clares sobre neuroplasticitat per mantenir una ment activa.</p>
             
             <div class="taller-details">
-                <p> <strong>Ubicació:</strong> Espais municipals / Biblioteques (El Prat de Llobregat)</p>
-                <p> <strong>Durada:</strong> 60 minuts (40' exposició + 20' torn obert)</p>
-                <p> <strong>Accés:</strong> Gratuït (Aforament limitat)</p>
+                <p><strong>Ubicació:</strong> Espais municipals / Biblioteques (El Prat de Llobregat)</p>
+                <p><strong>Durada:</strong> 60 minuts (40' exposició + 20' torn obert)</p>
+                <p><strong>Accés:</strong> Gratuït (Aforament limitat)</p>
             </div>
             
             <a href="#contacte" class="btn-primary">Sol·licitar informació de properes dates</a>
         </div>
     </section>
 
-    <section id="contacte" class="contacte-seccio">
-        <div class="contacte-container">
-            <h2>Contacta amb Nosaltres</h2>
-            <p>Estem aquí per ajudar-te. Demana la teva valoració inicial o consulta'ns qualsevol dubte sobre els nostres serveis o tallers.</p>
-            
-            <div class="contacte-info">
-                <p><strong> Adreça:</strong> Carrer de Lleida, 67, 08820 El Prat de Llobregat, Barcelona</p>
-                <p><strong> Telèfon:</strong> +34 937 12 34 56</p>
-                <p><strong> Correu:</strong> hola@cinquehemisferi.cat</p>
-                <p><strong> Horari d'Atenció:</strong> Matins: 09:00h - 13:00h | Tardes: 15:30h - 19:30h (Visites concertades prèviament)</p>
+    <footer id="contacte">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>Cinquè Hemisferi</h4>
+                <p>Centre clínic d'estimulació cognitiva i neuropsicologia.</p>
+                <p><strong>Carrer de Lleida, 67</strong></p>
+                <p>08820 El Prat de Llobregat, Barcelona</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contacte</h4>
+                <p>Telèfon: +34 937 12 34 56</p>
+                <p>Correu: hola@cinquehemisferi.cat</p>
+                <p>Web: www.cinquehemisferi.cat</p>
+            </div>
+            <div class="footer-col">
+                <h4>Horari d'Atenció</h4>
+                <p>De dilluns a divendres:</p>
+                <p>Matins: 09:00h - 13:00h</p>
+                <p>Tardes: 15:30h - 19:30h</p>
+                <p><em>Visites concertades prèviament.</em></p>
             </div>
         </div>
-    </section>
-
-    <footer>
         <div class="footer-bottom">
             <p>&copy; 2026 Cinquè Hemisferi. Tots els drets reservats.</p>
         </div>
